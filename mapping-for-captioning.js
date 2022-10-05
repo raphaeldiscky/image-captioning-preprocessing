@@ -1,7 +1,7 @@
 import jsonFile from './annotations/coco2014_captions_indo.json' assert { type: 'json' }
 import FileSystem from 'fs'
 
-const DATA_TYPE = 'val2014'
+const DATA_TYPE = 'train2014'
 
 async function mappingForCaptioning() {
   let arr = [{}]
@@ -16,7 +16,7 @@ async function mappingForCaptioning() {
     )
     if (item.filepath === DATA_TYPE) {
       let key = `COCO_dataset/${item.filepath}/${item.filename}`
-      arr[0][key] = item.sentences.map((x) => x.raw)
+      arr[0][key] = item.sentences.map((x) => `sos ${x.raw} eos`)
     }
   })
   return arr.shift()
