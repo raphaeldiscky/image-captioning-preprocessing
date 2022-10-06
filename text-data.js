@@ -2,7 +2,7 @@ import mappedTrainData from './karpathy_train2014_indo.json' assert { type: 'jso
 import mappedValData from './karpathy_val2014_indo.json' assert { type: 'json' }
 import FileSystem from 'fs'
 
-// @Function: Create text data from mapped data
+// Create text data from indonesian mapped data after mapping
 async function createTextData() {
   let arrTrain = []
   let arrVal = []

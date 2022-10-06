@@ -1,6 +1,7 @@
 import jsonFile from './annotations/captions_train2014.json' assert { type: 'json' }
 import FileSystem from 'fs'
 
+// Restructure from raw english coco dataset
 async function restructureData() {
   const arr = []
 
