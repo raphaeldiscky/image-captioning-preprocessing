@@ -1,6 +1,6 @@
 // indonesia
-import indoValData from './mapped_captions_val2014_indo.json' assert { type: 'json' }
-import indoTrainData from './mapped_captions_train2014_indo.json' assert { type: 'json' }
+import indoValData from './karpathy_val2014_indo.json' assert { type: 'json' }
+import indoTrainData from './karpathy_train2014_indo.json' assert { type: 'json' }
 import textDataIndo from './text_data_indo.json' assert { type: 'json' }
 // english
 import englishValData from './mapped_captions_val2014_english.json' assert { type: 'json' }

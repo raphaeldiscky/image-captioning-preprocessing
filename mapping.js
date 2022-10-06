@@ -16,7 +16,7 @@ async function mappingForCaptioning() {
     )
 
     if (item.filepath === DATA_TYPE) {
-      let key = `COCO_dataset/${item.filepath}/${item.filename}`
+      let key = `coco/${item.filepath}/${item.filename}`
       arr[0][key] = item.sentences.slice(0, 5).map((x) => `sos ${x.raw} eos`)
     }
   })

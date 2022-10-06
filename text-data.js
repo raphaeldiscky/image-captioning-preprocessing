@@ -1,5 +1,5 @@
-import mappedTrainData from './mapped_captions_train2014.json' assert { type: 'json' }
-import mappedValData from './mapped_captions_val2014.json' assert { type: 'json' }
+import mappedTrainData from './karpathy_train2014_indo.json' assert { type: 'json' }
+import mappedValData from './karpathy_val2014_indo.json' assert { type: 'json' }
 import FileSystem from 'fs'
 
 // @Function: Create text data from mapped data
