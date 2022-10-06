@@ -1,13 +1,14 @@
-import mappedValData from './mapped_captions_val2014.json' assert { type: 'json' }
-import mappedTrainData from './mapped_captions_train2014.json' assert { type: 'json' }
+// indonesia
+import indoValData from './mapped_captions_val2014_indo.json' assert { type: 'json' }
+import indoTrainData from './mapped_captions_train2014_indo.json' assert { type: 'json' }
 import textDataIndo from './text_data_indo.json' assert { type: 'json' }
 // english
-import englishValData from './captions_mapping_valid2.json' assert { type: 'json' }
-import englishTrainData from './captions_mapping_train2.json' assert { type: 'json' }
+import englishValData from './mapped_captions_val2014_english.json' assert { type: 'json' }
+import englishTrainData from './mapped_captions_train2014_english.json' assert { type: 'json' }
 import englishTextData from './text_data_english.json' assert { type: 'json' }
 
-const indoValLength = Object.keys(mappedValData).length
-const indoTrainLength = Object.keys(mappedTrainData).length
+const indoValLength = Object.keys(indoValData).length
+const indoTrainLength = Object.keys(indoTrainData).length
 const englishValLength = Object.keys(englishValData).length
 const englishTrainLength = Object.keys(englishTrainData).length
 const indoTextLength = Object.keys(textDataIndo).length

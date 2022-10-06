@@ -2,6 +2,7 @@ import mappedTrainData from './mapped_captions_train2014.json' assert { type: 'j
 import mappedValData from './mapped_captions_val2014.json' assert { type: 'json' }
 import FileSystem from 'fs'
 
+// @Function: Create text data from mapped data
 async function createTextData() {
   let arrTrain = []
   let arrVal = []
@@ -28,7 +29,7 @@ async function createTextData() {
 
 const newArr = await createTextData()
 
-FileSystem.writeFile(`text_data.json`, JSON.stringify(newArr), (error) => {
+FileSystem.writeFile(`text_data_indo.json`, JSON.stringify(newArr), (error) => {
   if (error) {
     throw error
   }
