@@ -1,4 +1,4 @@
-## Data preprocessing step for image captioning training:
+## Data preprocessing step for <a href="https://github.com/raphaeldiscky/image-captioning" target="_blank">Image Captioning</a>:
 
 1. `npm run mapping`
    - input: raw indonesian coco2014 dataset from rayandrew github
