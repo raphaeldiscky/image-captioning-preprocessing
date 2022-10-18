@@ -1,11 +1,11 @@
-import jsonFile from './annotations/coco2014_captions_indo.json' assert { type: 'json' }
+import jsonFile from './annotations/captions_indo_rayandrew.json' assert { type: 'json' }
 import FileSystem from 'fs'
 
-const DATA_TYPE = 'val2014'
+const DATA_TYPE = 'train2014'
 
 // Mapping from raw indonesian coco dataset from rayandrew github
 async function mappingForCaptioning() {
-  let arr = [{}]
+  let arr = {}
 
   jsonFile.images.forEach((item, i) => {
     console.log(
@@ -18,10 +18,10 @@ async function mappingForCaptioning() {
 
     if (item.filepath === DATA_TYPE) {
       let key = `coco/${item.filepath}/${item.filename}`
-      arr[0][key] = item.sentences.slice(0, 5).map((x) => `sos ${x.raw} eos`)
+      arr[key] = item.sentences.slice(0, 5).map((x) => `<start> ${x.raw} <end>`)
     }
   })
-  return arr.shift()
+  return arr
 }
 
 const mappedData = await mappingForCaptioning()
@@ -33,8 +33,14 @@ console.log(
   Object.keys(mappedData).length
 )
 
+const folderName = 'saved_data'
+
+if (!FileSystem.existsSync(folderName)) {
+  FileSystem.mkdirSync(folderName)
+}
+
 FileSystem.writeFile(
-  `mapped_captions_${DATA_TYPE}_indo.json`,
+  `./saved_data/mapped_captions_${DATA_TYPE}_indo.json`,
   JSON.stringify(mappedData),
   (error) => {
     if (error) {

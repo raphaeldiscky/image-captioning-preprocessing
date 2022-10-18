@@ -1,5 +1,5 @@
-import mappedTrainData from './karpathy_train2014_indo.json' assert { type: 'json' }
-import mappedValData from './karpathy_val2014_indo.json' assert { type: 'json' }
+import mappedTrainData from './saved_data/karpathy_train2014_indo.json' assert { type: 'json' }
+import mappedValData from './saved_data/karpathy_val2014_indo.json' assert { type: 'json' }
 import FileSystem from 'fs'
 
 // Create text data from indonesian mapped data after mapping
@@ -29,8 +29,12 @@ async function createTextData() {
 
 const newArr = await createTextData()
 
-FileSystem.writeFile(`text_data_indo.json`, JSON.stringify(newArr), (error) => {
-  if (error) {
-    throw error
+FileSystem.writeFile(
+  `./saved_data/text_data_indo.json`,
+  JSON.stringify(newArr),
+  (error) => {
+    if (error) {
+      throw error
+    }
   }
-})
+)

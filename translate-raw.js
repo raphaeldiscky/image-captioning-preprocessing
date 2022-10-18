@@ -1,5 +1,5 @@
 import translate from 'google-translate-api-x'
-import jsonFile from './annotations/captions_train2014.json' assert { type: 'json' }
+import jsonFile from './annotations/captions_raw_val2014_english.json' assert { type: 'json' }
 import FileSystem from 'fs'
 
 async function translateData(first_data, last_data) {
@@ -21,7 +21,7 @@ async function translateData(first_data, last_data) {
   const translatedArr = arr.shift()
 
   FileSystem.writeFile(
-    `translated_data_train2014_raw_${first_data}_to_${last_data}.json`,
+    `translated_raw_val2014_${first_data}_to_${last_data}.json`,
     JSON.stringify(translatedArr),
     (error) => {
       if (error) {
@@ -31,7 +31,7 @@ async function translateData(first_data, last_data) {
   )
 }
 
-// translateData(0, 20705)
+translateData(0, 1000)
 // translateData(20705, 41410)
 // translateData(41410, 62115)
 // translateData(62115, 82820)

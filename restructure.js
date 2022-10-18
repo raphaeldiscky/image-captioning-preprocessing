@@ -1,4 +1,4 @@
-import jsonFile from './annotations/captions_train2014.json' assert { type: 'json' }
+import jsonFile from './annotations/captions_raw_train2014_english.json' assert { type: 'json' }
 import FileSystem from 'fs'
 
 // Restructure from raw english coco dataset
@@ -61,7 +61,7 @@ console.log(
 )
 
 FileSystem.writeFile(
-  'restructured_data_train2014.json',
+  'restructured_data_train2014_english.json',
   JSON.stringify(newArr),
   (error) => {
     if (error) {

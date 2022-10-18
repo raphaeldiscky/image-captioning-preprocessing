@@ -1,5 +1,5 @@
-import indoValData from './mapped_captions_val2014_indo.json' assert { type: 'json' }
-import indoTrainData from './mapped_captions_train2014_indo.json' assert { type: 'json' }
+import indoValData from './saved_data/mapped_captions_val2014_indo.json' assert { type: 'json' }
+import indoTrainData from './saved_data/mapped_captions_train2014_indo.json' assert { type: 'json' }
 import FileSystem from 'fs'
 
 async function getKarpathy() {
@@ -19,11 +19,8 @@ async function getKarpathy() {
 
   const newTrainObj = { ...indoTrainData, ...sliceVal }
 
-  console.log(Object.keys(newTrainObj).length)
-  console.log(Object.keys(valRemainder).length)
-
   FileSystem.writeFile(
-    `karpathy_train2014_indo.json`,
+    `./saved_data/karpathy_train2014_indo.json`,
     JSON.stringify(newTrainObj),
     (error) => {
       if (error) {
@@ -32,7 +29,7 @@ async function getKarpathy() {
     }
   )
   FileSystem.writeFile(
-    `karpathy_val2014_indo.json`,
+    `./saved_data/karpathy_val2014_indo.json`,
     JSON.stringify(valRemainder),
     (error) => {
       if (error) {
