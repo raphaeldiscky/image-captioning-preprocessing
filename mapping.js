@@ -1,7 +1,7 @@
 import jsonFile from './annotations/captions_indo_rayandrew.json' assert { type: 'json' }
 import FileSystem from 'fs'
 
-const DATA_TYPE = 'train2014'
+const DATA_TYPE = 'val2014'
 
 // Mapping from raw indonesian coco dataset from rayandrew github
 async function mappingForCaptioning() {
@@ -17,7 +17,7 @@ async function mappingForCaptioning() {
     )
 
     if (item.filepath === DATA_TYPE) {
-      let key = `coco/${item.filepath}/${item.filename}`
+      let key = `datasets/${item.filepath}/${item.filename}`
       arr[key] = item.sentences.slice(0, 5).map((x) => `<start> ${x.raw} <end>`)
     }
   })
