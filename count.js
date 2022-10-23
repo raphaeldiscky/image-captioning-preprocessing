@@ -1,4 +1,3 @@
-// indonesia
 import indoValData from './saved_data/karpathy_val2014_indo.json' assert { type: 'json' }
 import indoTrainData from './saved_data/karpathy_train2014_indo.json' assert { type: 'json' }
 import textDataIndo from './saved_data/text_data_indo.json' assert { type: 'json' }

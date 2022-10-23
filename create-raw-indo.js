@@ -15,7 +15,7 @@ function switchData() {
 
 const selectedRawEnglishData = switchData()
 
-// Mapping from raw indonesian coco dataset from rayandrew github
+// mapping from raw indonesian coco dataset from rayandrew github
 async function createRaw() {
   let images = []
   let annotations = []
@@ -53,8 +53,6 @@ async function createRaw() {
 }
 
 const mappedData = await createRaw()
-
-console.log(`${DATA_TYPE} data length: `, Object.keys(mappedData).length)
 
 FileSystem.writeFile(
   `captions_raw_${DATA_TYPE}_indo.json`,

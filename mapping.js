@@ -1,7 +1,7 @@
 import jsonFile from './annotations/captions_indo_rayandrew.json' assert { type: 'json' }
 import FileSystem from 'fs'
 
-const DATA_TYPE = 'val2014'
+const DATA_TYPE = 'train2014'
 
 // Mapping from raw indonesian coco dataset from rayandrew github
 async function mappingForCaptioning() {
