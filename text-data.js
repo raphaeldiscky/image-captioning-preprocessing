@@ -11,7 +11,7 @@ async function createTextData() {
     console.log('Mapping data: ', item)
     const captionsList = mappedTrainData[item]
     for (const caption of captionsList) {
-      arrTrain.push(caption)
+      arrTrain.push(`<start> ${caption} <end>`)
     }
   }
 
@@ -19,7 +19,7 @@ async function createTextData() {
     console.log('Mapping data: ', item)
     const captionsList = mappedValData[item]
     for (const caption of captionsList) {
-      arrVal.push(caption)
+      arrVal.push(`<start> ${caption} <end>`)
     }
   }
   const mergedData = arrTrain.concat(arrVal)
