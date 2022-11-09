@@ -2,7 +2,7 @@ import indoValData from './saved_data/mapped_captions_val2014_indo.json' assert 
 import indoTrainData from './saved_data/mapped_captions_train2014_indo.json' assert { type: 'json' }
 import FileSystem from 'fs'
 
-async function getKarpathy() {
+async function createKarpathySplit() {
   const sliceVal = Object.keys(indoValData)
     .slice(0, 30504)
     .reduce((res, key) => {
@@ -29,7 +29,7 @@ async function getKarpathy() {
     }
   )
   FileSystem.writeFile(
-    `./saved_data/karpathy_val2014_indo.json`,
+    `./saved_data/karpathy_valtest2014_indo.json`,
     JSON.stringify(valRemainder),
     (error) => {
       if (error) {
@@ -39,4 +39,4 @@ async function getKarpathy() {
   )
 }
 
-getKarpathy()
+createKarpathySplit()

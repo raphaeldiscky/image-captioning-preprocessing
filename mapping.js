@@ -1,27 +1,19 @@
 import jsonFile from './annotations/captions_indo_rayandrew.json' assert { type: 'json' }
 import FileSystem from 'fs'
 
-const DATA_TYPE = 'train2014'
+const DATA_TYPE = 'val2014'
 
 // Mapping from raw indonesian coco dataset from rayandrew github
 async function mappingForCaptioning() {
-  let arr = {}
+  let mappedData = {}
 
   jsonFile.images.forEach((item, i) => {
-    console.log(
-      'Mapping data: ',
-      i,
-      'of',
-      jsonFile.images.length,
-      'total images'
-    )
-
     if (item.filepath === DATA_TYPE) {
       let key = `datasets/${item.filepath}/${item.filename}`
-      arr[key] = item.sentences.slice(0, 5).map((x) => `<start> ${x.raw} <end>`)
+      mappedData[key] = item.sentences.slice(0, 5).map((x) => x.raw)
     }
   })
-  return arr
+  return mappedData
 }
 
 const mappedData = await mappingForCaptioning()

@@ -1,5 +1,5 @@
-import mappedTrainData from './saved_data/karpathy_train2014_indo.json' assert { type: 'json' }
-import mappedValData from './saved_data/karpathy_val2014_indo.json' assert { type: 'json' }
+import mappedTrainData from './saved_data/mapped_captions_train2014_indo.json' assert { type: 'json' }
+import mappedValData from './saved_data/mapped_captions_val2014_indo.json' assert { type: 'json' }
 import FileSystem from 'fs'
 
 // create text data from indonesian mapped data after mapping
