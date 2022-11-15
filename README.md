@@ -6,9 +6,9 @@
 2. `npm run karpathy`
    - input: mapped captions dataset, train set and val set coco2014
    - output: dataset with 113287 training samples and 10000 validation samples
-3. `npm run text-data`
+3. `npm run create-captions-data`
    - input: karpathy train and val coco2014
-   - output: text data which will later be used to get vocabs
+   - output: sentence data which will later be used to get vocabs
 4. train data
 5. `npm run create-raw-indo`
    - input: raw indonesian coco2014 dataset from rayandrew github

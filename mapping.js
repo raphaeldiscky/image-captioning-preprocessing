@@ -3,7 +3,7 @@ import FileSystem from 'fs'
 
 const DATA_TYPE = 'val2014'
 
-// Mapping from raw indonesian coco dataset from rayandrew github
+// mapping from raw indonesian coco dataset from rayandrew github
 async function mappingForCaptioning() {
   let mappedData = {}
 

@@ -17,11 +17,12 @@ async function createKarpathySplit() {
       return res
     }, {})
 
-  const newTrainObj = { ...indoTrainData, ...sliceVal }
+  const newTrainData = { ...indoTrainData, ...sliceVal }
+  const newValidData = valRemainder
 
   FileSystem.writeFile(
     `./saved_data/karpathy_train2014_indo.json`,
-    JSON.stringify(newTrainObj),
+    JSON.stringify(newTrainData),
     (error) => {
       if (error) {
         throw error
@@ -30,7 +31,7 @@ async function createKarpathySplit() {
   )
   FileSystem.writeFile(
     `./saved_data/karpathy_valtest2014_indo.json`,
-    JSON.stringify(valRemainder),
+    JSON.stringify(newValidData),
     (error) => {
       if (error) {
         throw error
