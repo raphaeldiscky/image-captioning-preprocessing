@@ -1,6 +1,6 @@
 import indoValData from './saved_data/karpathy_valtest2014_indo.json' assert { type: 'json' }
 import indoTrainData from './saved_data/karpathy_train2014_indo.json' assert { type: 'json' }
-import sentenceDataIndo from './saved_data/sentence_data_indo.json' assert { type: 'json' }
+import sentenceDataIndo from './saved_data/captions_data_indo.json' assert { type: 'json' }
 
 const indoValTestLength = Object.keys(indoValData).length
 const indoTrainLength = Object.keys(indoTrainData).length
