@@ -131,4 +131,4 @@ dist
 .pnp.*
 
 annotations/*
-*.json
+saved_data/*

@@ -1,0 +1,21 @@
+{
+  "name": "preprocessing",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "translate-raw": "node translate-raw.js",
+    "mapping": "node mapping.js",
+    "create-sentence-data": "node create-captions-data.js",
+    "karpathy": "node karpathy.js",
+    "count": "node count.js",
+    "create-raw-indo": "node create-raw-indo.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "google-translate-api-x": "^10.4.1"
+  }
+}
